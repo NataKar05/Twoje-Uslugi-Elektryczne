@@ -30,10 +30,9 @@
     <section>
         <h2>Skontaktuj się z nami</h2>
         <p>Masz pytania? Skontaktuj się z nami za pomocą formularza poniżej lub zadzwoń.</p>
-        <form action="#" method="post">
+        <form id="formularz" action="#" method="post">
             <label for="email">E-mail:</label>
-            <input type="text" id="email" name="email" required placeholder="np. jan.kowalski@przyklad.com">
-
+            <input type="email" id="email" name="email" required placeholder="np. jan.kowalski@przyklad.com">
             <label for="subject">Temat wiadomości:</label>
             <select id="subject" name="subject" required>
                 <option value="">-- Wybierz temat --</option>
@@ -60,5 +59,14 @@
 <footer>
     <p>&copy; 2025 Natalia Karwala</p>
 </footer>
+
+<script>
+document.getElementById("formularz").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.");
+    this.reset();
+});
+</script>
+
 </body>
 </html>
